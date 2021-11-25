@@ -8,10 +8,12 @@ table, tr, td {
 }
 
 table {
+  padding: auto;
   width: 100%;
 }
 
 #cabecalho {
+  margin: auto;
   position: fixed;
   top: 0;
 }
