@@ -1,5 +1,9 @@
 * {
   background-color: rgb(253, 251, 251);
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #014A7F;
+  line-height: normal;
 }
 
 table, tr, td {
@@ -12,8 +16,18 @@ table {
   width: 100%;
 }
 
-#cabecalho {
-  margin: auto;
-  position: fixed;
-  top: 0;
+ul, ol {
+  display: inline-block;
 }
+
+#cabecalho {
+  margin: 5px;
+  position:fixed;
+  top: 0;
+  width: 100%;
+}
+
+#minha_foto {
+  padding: 80px 0px 0px 5px;
+}
+
