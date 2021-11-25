@@ -2,6 +2,15 @@
   background-color: rgb(253, 251, 251);
 }
 
+table, tr, td {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
 #cabecalho {
   position: fixed;
   top: 0;
