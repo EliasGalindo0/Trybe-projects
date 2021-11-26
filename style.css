@@ -22,11 +22,20 @@ ul, ol {
 }
 
 .tabela {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .lado-esquerdo {
+  display: inline-block;
+  width: 47%;
   float: left;
+}
+
+.lado-direito {
+  display: inline-block;
+  width: 47%;
+  margin-right: 0;
+  margin-left: 3%;
 }
 
 #cabecalho {
