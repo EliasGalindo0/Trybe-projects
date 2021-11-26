@@ -39,10 +39,17 @@ ul, ol {
 }
 
 #cabecalho {
+  background-color: green;
   margin: 5px;
   position:fixed;
   top: 0;
   width: 100%;
+}
+
+#titulo {
+  background-color: green;
+  color: white;
+  text-align: center;
 }
 
 #minha_foto {
