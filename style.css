@@ -11,13 +11,22 @@ table, tr, td {
   border-collapse: collapse;
 }
 
-table {
-  padding: auto;
+table{
   width: 100%;
+  margin-bottom: 50px;
 }
 
 ul, ol {
   display: inline-block;
+  margin-right: 80px;
+}
+
+.tabela {
+  margin-top: 150px;
+}
+
+.lado-esquerdo {
+  float: left;
 }
 
 #cabecalho {
