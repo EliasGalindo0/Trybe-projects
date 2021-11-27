@@ -1,24 +1,28 @@
 * {
   background-color: rgb(253, 251, 251);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
-  color: #014A7F;
+  color: #014a7f;
   line-height: normal;
 }
 
-table, tr, td {
-  border: 1px solid #ddd;
+table , tr , td {
+  border: 1px solid rgb(221, 221, 221);
   border-collapse: collapse;
 }
 
-table{
+table {
   width: 100%;
-  margin-bottom: 50px;
+  /* padding: 10px; */
 }
 
-ul, ol {
+ul , ol {
   display: inline-block;
   margin-right: 80px;
+}
+
+footer {
+  padding: 20px 2px 2px 2px;
 }
 
 .tabela {
@@ -26,7 +30,6 @@ ul, ol {
 }
 
 .lado-esquerdo {
-  display: inline-block;
   width: 47%;
   float: left;
 }
@@ -41,7 +44,7 @@ ul, ol {
 #cabecalho {
   background-color: green;
   margin: 5px;
-  position:fixed;
+  position: fixed;
   top: 0;
   width: 100%;
 }
@@ -53,6 +56,6 @@ ul, ol {
 }
 
 #minha_foto {
-  padding: 80px 0px 0px 5px;
+  margin-top: 5%;
 }
 
