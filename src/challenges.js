@@ -19,9 +19,14 @@ function splitSentence(string) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(array) {
+  let primeiro = array[0];
+  let ultimo = array[array.length - 1];
+  let symbol = ', ';
+  let arrayFinal = ultimo + symbol + primeiro;
+  return arrayFinal;
 }
+console.log(concatName(['Elias', 'Pires', 'Abrao', 'Galindo']));
 
 // Desafio 5
 function footballPoints() {
