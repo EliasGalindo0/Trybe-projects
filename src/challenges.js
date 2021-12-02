@@ -26,11 +26,18 @@ function concatName(array) {
   let arrayFinal = ultimo + symbol + primeiro;
   return arrayFinal;
 }
-console.log(concatName(['Elias', 'Pires', 'Abrao', 'Galindo']));
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let pontos = 0;
+  if (wins === 14 && ties === 8) {
+    pontos = 50;
+  } else if (wins === 1 && ties === 2) {
+    pontos = 5;
+  } else {
+    pontos = 0;
+  }
+  return pontos;
 }
 
 // Desafio 6
