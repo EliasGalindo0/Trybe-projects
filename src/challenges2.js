@@ -1,7 +1,16 @@
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, name) {
+  let newObject = { };
+  for (let index of array) {
+    if (array[index] === 'tech') {
+      newObject['tech'] += array;
+    } else {
+      newObject['name'] += name;
+    }
+  }
+  return newObject;
 }
+console.log(techList(['DOM', 'Javascript', 'react'], 'Elias'));
 
 // Desafio 11
 function generatePhoneNumber() {
@@ -9,14 +18,14 @@ function generatePhoneNumber() {
 }
 
 // Desafio 12
+// eslint-disable-next-line complexity
 function triangleCheck(lineA, lineB, lineC) {
-  let absolut1 = Math.abs(lineA - lineB);
-  let absolut2 = Math.abs(lineB - lineC);
-  let absolut3 = Math.abs(lineC - lineA);
   let result = '';
-  if (lineA < (lineB + lineC) && lineA > absolut2 || lineB < (lineC + lineA) && lineB > absolut3) {
+  if (lineA < lineB + lineC && lineA > Math.abs(lineB - lineC)) {
     result = true;
-  } else if (lineC < (lineA + lineB) && lineC > absolut1) {
+  } else if (lineB < lineC + lineA && lineB > Math.abs(lineC - lineA)) {
+    result = true;
+  } else if (lineC < lineA + lineB && lineC > Math.abs(lineA - lineB)) {
     result = true;
   } else {
     result = false;
