@@ -1,16 +1,20 @@
 // Desafio 10
 function techList(array, name) {
-  let newObject = { };
-  for (let index of array) {
-    if (array[index] === 'tech') {
-      newObject['tech'] += array;
-    } else {
-      newObject['name'] += name;
-    }
+  let newArray = [];
+  let tech = array.sort();
+  let nome = name;
+  for (let index = 0; index < array.length; index += 1) {
+    let object = {
+      tech: tech[index],
+      name: nome
+    };
+    newArray.push(object);
   }
-  return newObject;
+  if (newArray.length === 0) {
+    return 'Vazio!';
+  }
+  return newArray;
 }
-console.log(techList(['DOM', 'Javascript', 'react'], 'Elias'));
 
 // Desafio 11
 function generatePhoneNumber() {
