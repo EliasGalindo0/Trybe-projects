@@ -37,8 +37,7 @@
 .pixel {
   background-color: white;
   display: inline-block;
-  height: 50px;
-  width: 50px;
-  margin: 0;
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
 }
