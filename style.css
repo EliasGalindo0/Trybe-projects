@@ -1,4 +1,8 @@
-.black {
+button {
+  margin-bottom: 10px;
+}
+
+#black {
   background-color: black;
   display: inline-block;
   height: 50px;
@@ -7,7 +11,7 @@
   border: 1px solid black;
 }
 
-.yellow {
+#yellow {
   background-color: yellow;
   display: inline-block;
   height: 50px;
@@ -16,7 +20,7 @@
   border: 1px solid black;
 }
 
-.blue {
+#blue {
   background-color: blue;
   display: inline-block;
   height: 50px;
@@ -25,7 +29,7 @@
   border: 1px solid black;
 }
 
-.red {
+#red {
   background-color: red;
   display: inline-block;
   height: 50px;
@@ -40,4 +44,8 @@
   height: 40px;
   width: 40px;
   border: 1px solid black;
+}
+
+#pixel-board {
+  font-size: 0%;
 }
