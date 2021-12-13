@@ -10,9 +10,9 @@ function createItem() {
   inputText.value = '';
 }
 function changeLiBgColor(event) {
-  const listItem = document.querySelector('.item');
-  listItem.classList.remove('item');
-  event.target.classList.add('listItem');
+  const listBg = document.querySelector('.listBg');
+  listBg.classList.remove('listBg');
+  event.target.classList.add('listBg');
 }
 
 const buton = document.querySelector('#criar-tarefa');

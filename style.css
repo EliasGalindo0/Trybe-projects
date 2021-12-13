@@ -1,3 +1,26 @@
-.listItem {
-  background-color: rgb(128,128,128);
-};
+.item {
+  height: 20px;
+  width: fit-content;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: white;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.listBg {
+  background-color: rgb(128, 128, 128);
+}
+
+.completed {
+  text-decoration: line-through solid black;
+}
+
+#lista-tarefas {
+  background-color: white;
+  text-decoration: none;
+}
