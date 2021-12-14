@@ -14,9 +14,16 @@ function changeLiBgColor(event) {
   listBg.classList.remove('listBg');
   event.target.classList.add('listBg');
 }
+function taskDone(e) {
+  if (e.target.classList.contains('completed')) {
+    e.target.classList = 'item listBg';
+  } else {
+    e.target.classList.add('completed');
+  }
+}
 
 const buton = document.querySelector('#criar-tarefa');
 
 buton.addEventListener('click', createItem);
-
 taskList.addEventListener('click', changeLiBgColor);
+taskList.addEventListener('dblclick', taskDone);
