@@ -1,6 +1,9 @@
-// ### 7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza rgb(128,128,128)
 const taskList = document.querySelector('#lista-tarefas');
-const inputText = document.getElementById('texto-tarefa');
+const inputText = document.querySelector('#texto-tarefa');
+const buton = document.querySelector('#criar-tarefa');
+const buttonEraseAll = document.querySelector('#apaga-tudo');
+const done = document.querySelector('#remover-finalizados');
+const saveButton = document.querySelector('#salvar-tarefas');
 
 function createItem() {
   const liItem = document.createElement('li');
@@ -21,9 +24,30 @@ function taskDone(e) {
     e.target.classList.add('completed');
   }
 }
+function erase() {
+  taskList.innerHTML = '';
+  document.querySelector('ol').classList.add('listBg');
+}
+function tasksDone() {
+  const doneTask = document.getElementsByClassName('completed');
+  while (doneTask.length > 0) {
+    doneTask[0].parentNode.removeChild(doneTask[0]);
+  }
+  document.querySelector('ol').classList.add('listBg');
+}
+function saveContent() {
+  const htmlContent = taskList.innerHTML;
+  localStorage.setItem('conteudo', htmlContent);
+}
+const save = localStorage.getItem('conteudo');
+if (save) {
+  const htmlContent1 = taskList;
+  htmlContent1.innerHTML = save;
+}
 
-const buton = document.querySelector('#criar-tarefa');
-
+buttonEraseAll.addEventListener('click', erase);
 buton.addEventListener('click', createItem);
 taskList.addEventListener('click', changeLiBgColor);
 taskList.addEventListener('dblclick', taskDone);
+done.addEventListener('click', tasksDone);
+saveButton.addEventListener('click', saveContent);
