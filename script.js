@@ -58,6 +58,8 @@ function moveDown() {
 function removeSelectedTask() {
   const selectedTask = document.querySelector('li.listBg');
   selectedTask.remove();
+  taskList.classList.add('listBg');
+
 }
 function saveContent() {
   const htmlContent = taskList.innerHTML;
