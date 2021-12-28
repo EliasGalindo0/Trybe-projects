@@ -4,6 +4,9 @@ const buton = document.querySelector('#criar-tarefa');
 const buttonEraseAll = document.querySelector('#apaga-tudo');
 const done = document.querySelector('#remover-finalizados');
 const saveButton = document.querySelector('#salvar-tarefas');
+const moveUpButton = document.querySelector('#mover-cima');
+const moveDownButton = document.querySelector('#mover-baixo');
+const removeSelectedButton = document.querySelector('#remover-selecionado');
 
 function createItem() {
   const liItem = document.createElement('li');
@@ -24,7 +27,7 @@ function taskDone(e) {
     e.target.classList.add('completed');
   }
 }
-function erase() {
+function eraseAll() {
   taskList.innerHTML = '';
   document.querySelector('ol').classList.add('listBg');
 }
@@ -34,6 +37,24 @@ function tasksDone() {
     doneTask[0].parentNode.removeChild(doneTask[0]);
   }
   document.querySelector('ol').classList.add('listBg');
+}
+function moveUp() {
+  const itenPosition = document.querySelectorAll('li');
+  let itenChange = '';
+  for (let i = 0; i < itenPosition.length; i += 1) {
+    if (itenPosition[i].classList.contains('listBg') === true && itenPosition[i] !== 0) {
+      itenChange = itenPosition[i - 1].innerHTML;
+      itenPosition[i].innerHTML = itenChange;
+    }
+  }
+  console.log(itenChange);
+}
+function moveDown() {
+
+}
+function removeSelectedTask() {
+  const selectedTask = document.querySelector('li.listBg');
+  selectedTask.remove();
 }
 function saveContent() {
   const htmlContent = taskList.innerHTML;
@@ -45,9 +66,12 @@ if (save) {
   htmlContent1.innerHTML = save;
 }
 
-buttonEraseAll.addEventListener('click', erase);
+buttonEraseAll.addEventListener('click', eraseAll);
 buton.addEventListener('click', createItem);
 taskList.addEventListener('click', changeLiBgColor);
 taskList.addEventListener('dblclick', taskDone);
 done.addEventListener('click', tasksDone);
 saveButton.addEventListener('click', saveContent);
+moveUpButton.addEventListener('click', moveUp);
+moveDownButton.addEventListener('click', moveDown);
+removeSelectedButton.addEventListener('click', removeSelectedTask);
