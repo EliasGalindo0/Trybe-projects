@@ -20,7 +20,7 @@ function changeLiBgColor(event) {
   listBg.classList.remove('listBg');
   event.target.classList.add('listBg');
 }
-function taskDone(e) {
+function taskDoneMark(e) {
   if (e.target.classList.contains('completed')) {
     e.target.classList = 'item listBg';
   } else {
@@ -29,9 +29,8 @@ function taskDone(e) {
 }
 function eraseAll() {
   taskList.innerHTML = '';
-  document.querySelector('ol').classList.add('listBg');
 }
-function tasksDone() {
+function tasksDoneRemove() {
   const doneTask = document.getElementsByClassName('completed');
   while (doneTask.length > 0) {
     doneTask[0].parentNode.removeChild(doneTask[0]);
@@ -39,18 +38,22 @@ function tasksDone() {
   document.querySelector('ol').classList.add('listBg');
 }
 function moveUp() {
-  const itenPosition = document.querySelectorAll('li');
-  let itenChange = '';
-  for (let i = 0; i < itenPosition.length; i += 1) {
-    if (itenPosition[i].classList.contains('listBg') === true && itenPosition[i] !== 0) {
-      itenChange = itenPosition[i - 1].innerHTML;
-      itenPosition[i].innerHTML = itenChange;
-    }
+  const li = document.querySelector('li.listBg');
+  if (!li) { return alert('Por favor, selecione um item da lista!'); }
+  const parent = li.parentElement;
+  if (li === parent.firstElementChild) {
+    return alert('Não há como mover o primeiro item da lista para cima!');
   }
-  console.log(itenChange);
+  parent.insertBefore(li, li.previousElementSibling);
 }
 function moveDown() {
-
+  const li = document.querySelector('li.listBg');
+  if (!li) { return alert('Por favor, selecione um item da lista!'); }
+  const parent = li.parentElement;
+  if (li === parent.lastChild) {
+    return alert('Não há como mover o último item da lista para baixo!');
+  }
+  parent.insertBefore(li, li.nextElementSibling.nextElementSibling);
 }
 function removeSelectedTask() {
   const selectedTask = document.querySelector('li.listBg');
@@ -69,8 +72,8 @@ if (save) {
 buttonEraseAll.addEventListener('click', eraseAll);
 buton.addEventListener('click', createItem);
 taskList.addEventListener('click', changeLiBgColor);
-taskList.addEventListener('dblclick', taskDone);
-done.addEventListener('click', tasksDone);
+taskList.addEventListener('dblclick', taskDoneMark);
+done.addEventListener('click', tasksDoneRemove);
 saveButton.addEventListener('click', saveContent);
 moveUpButton.addEventListener('click', moveUp);
 moveDownButton.addEventListener('click', moveDown);
