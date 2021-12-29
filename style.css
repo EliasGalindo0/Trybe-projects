@@ -1,3 +1,9 @@
+body {
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
 button {
   margin-bottom: 10px;
 }
@@ -48,4 +54,6 @@ button {
 
 #pixel-board {
   font-size: 0%;
+  align-self: center;
+  padding: auto;
 }
