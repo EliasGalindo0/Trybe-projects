@@ -8,21 +8,31 @@
   <title>Document</title>
 </head>
 <body>
+  
+<header>
   <h1 id='title'>Paleta de Cores</h1>
-  <section id='color-palette'>
-    <div class='color selected' id='black'></div>
-    <div class='color' id='yellow'></div>
-    <div class='color' id='blue'></div>
-    <div class='color' id='red'></div>
+</header>
+
+<main>
+
+  <div id='colors'>  
+    <ul id='color-palette'>
+      <li class='color selected' style='background-color: black;'></li>
+      <li class='color random'></li>
+      <li class='color random'></li>
+      <li class='color random'></li>
+    </ul>
+  </div>
+
+  <section> 
+    <button id='clear-board'>Limpar</button> 
+    <input id='board-size' type='number' min='1' max='50'>
+    <button id='generate-board'>VQV</button>
   </section>
   
-  <button id='clear-board'>Limpar</button> 
-  <input id='board-size' type='number' min='1' max='50'>
-  <button id='generate-board'>VQV</button>
- 
-  <div id='pixel-board'>
-    
-  </div>
+  <div id='pixel-board'></div>
+
+</main>
 <script src="script.js"></script>
 </body>
 </html>
