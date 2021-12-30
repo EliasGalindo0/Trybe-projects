@@ -1,0 +1,13 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,0.5998774509803921) 50%, rgba(252,176,69,1) 100%);
+  text-align: center;
+}
+
+.ball {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
