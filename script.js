@@ -1,5 +1,5 @@
 const randomColors = document.querySelectorAll('.random');
-// const answer = document.querySelector('#answer');
+const answer = document.querySelector('#answer');
 const colorList = document.querySelector('#color-list');
 const resetButton = document.getElementById('reset-game');
 
@@ -20,7 +20,7 @@ function setColors() {
   const rgbText = document.getElementById('rgb-color');
   const rgbColor = document.querySelector('.ball');
   const bgColor = getComputedStyle(rgbColor).backgroundColor;
-  rgbText.innerText = bgColor;
+  rgbText.innerHTML = bgColor;
   return randomColors;
 }
 
@@ -29,17 +29,17 @@ window.onload = setColors();
 function changeClassChoosen(e) {
   e.target.classList.contains('ball');
   e.target.classList.add('choosen');
-  // const choose = document.querySelector('.choosen');
-  // const ckgChoose = getComputedStyle(choose);
-  // if (ckgChoose === ) {
-  //   answer.innerText = 'Acertou!';
-  // } else {
-  //   answer.innerText = 'Errou! Tente novamente!';
-  // }
-  // console.log(rgbCode);
-  // // console.log(colorCorrect);
-  // console.log(bgColor);
-  console.log();
+  const choose = document.querySelector('.choosen');
+  const bkgChoose = getComputedStyle(choose).backgroundColor;
+  const rgbCompare = document.getElementById('rgb-color').innerText;
+  if (bkgChoose === rgbCompare) {
+    answer.innerText = 'Acertou!';
+  } else {
+    answer.innerText = 'Errou! Tente novamente!';
+  }
+  console.log(bkgChoose);
+  console.log(rgbCompare);
+  // console.log();
 }
 
 function reset() {
