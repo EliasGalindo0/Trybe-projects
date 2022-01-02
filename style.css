@@ -4,6 +4,12 @@ body {
   text-align: center;
 }
 
+p {
+  display: inline-block;
+  font-weight: 500;
+  font-size: larger;
+}
+
 .ball {
   display: inline-block;
   width: 70px;

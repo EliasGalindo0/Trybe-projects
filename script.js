@@ -2,6 +2,7 @@ const randomColors = document.querySelectorAll('.random');
 const answer = document.querySelector('#answer');
 const colorList = document.querySelector('#color-list');
 const resetButton = document.getElementById('reset-game');
+const scoreDisplay = document.querySelector('#score');
 
 function randomColorsGenerate() {
   const aux = '0123456789ABCDEF';
@@ -26,6 +27,26 @@ function setColors() {
 
 window.onload = setColors();
 
+function updateScore() {
+  const actualScore = localStorage.getItem('score');
+
+  if (actualScore !== null) {
+    scoreDisplay.innerText = `${localStorage.getItem('score')}`;
+  }
+}
+
+updateScore();
+
+function pontuation() {
+  let score = localStorage.getItem('score');
+  if (score === null) {
+    localStorage.setItem('score', 3);
+  }
+  score = Number(score) + 3;
+  localStorage.setItem('score', score);
+  scoreDisplay.innerText = `${localStorage.getItem('score')}`;
+}
+
 function changeClassChoosen(e) {
   e.target.classList.contains('ball');
   e.target.classList.add('choosen');
@@ -34,12 +55,10 @@ function changeClassChoosen(e) {
   const rgbCompare = document.getElementById('rgb-color').innerText;
   if (bkgChoose === rgbCompare) {
     answer.innerText = 'Acertou!';
+    pontuation();
   } else {
     answer.innerText = 'Errou! Tente novamente!';
   }
-  console.log(bkgChoose);
-  console.log(rgbCompare);
-  // console.log();
 }
 
 function reset() {
