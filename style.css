@@ -2,7 +2,7 @@
   margin: 20px auto;
   width: 400px;
   font-family: sans-serif;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 #meme-image-container {
@@ -15,7 +15,7 @@
 
 #meme-image-container label {
   display: block;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
