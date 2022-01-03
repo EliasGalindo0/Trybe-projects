@@ -8,11 +8,16 @@
   <title>Document</title>
 </head>
 <body>
-  
-  <input type="text" id='text-input'>
-  
+  <div id='head-meme-container'>
+    <label>Texto</label>
+    <input type="text" id='text-input'>
+  </div>
+
   <div id='meme-image-container'>
+    <label>Escolha uma imagem</label>
+    <input id='meme-insert' type="file"  accept="image/*" name="image">
     <h3 id='meme-text'></h3>
+    <canvas id='meme-image'></canvas>
   </div>
   
 <script src="script.js"></script>

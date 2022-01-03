@@ -1,0 +1,37 @@
+#head-meme-container {
+  margin: 20px auto;
+  width: 400px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#meme-image-container {
+  margin: 20px auto;
+  width: 400px;
+  font-family: sans-serif;
+  background-color: white;
+  border: solid black 1px;
+}
+
+#meme-image-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#meme-image-container input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+#meme-image {
+  width: 100%;
+  background-size: 100%;
+  position: inherit;
+}
+
+#meme-text {
+  position: absolute;
+  padding: 5px;
+}
