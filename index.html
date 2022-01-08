@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-  <div id='head-meme-container'>
-    <label>Texto</label>
-    <input type="text" id='text-input' maxlength="60">
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="head-meme-container">
+      <label>Texto</label>
+      <input type="text" id="text-input" maxlength="60" />
+      <div class="input-image">
+        <label>Escolha uma imagem</label>
+        <input id="meme-insert" type="file" accept="image/*" name="image" />
+      </div>
+    </div>
+    <div id="meme-image-container">
+      <h3 id="meme-text"></h3>
+      <canvas id="meme-image"></canvas>
+    </div>
+    <div class="buttons">
+      <button id="fire">Fire</button>
+      <button id="water">Water</button>
+      <button id="earth">Earth</button>
+    </div>
 
-  <div id='meme-image-container'>
-    <label>Escolha uma imagem</label>
-    <input id='meme-insert' type="file"  accept="image/*" name="image">
-    <h3 id='meme-text'></h3>
-    <canvas id='meme-image'></canvas>
-  </div>
-  
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

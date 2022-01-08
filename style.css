@@ -14,7 +14,6 @@
 }
 
 #meme-image-container label {
-  display: block;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -28,13 +27,34 @@
 #meme-image {
   width: 100%;
   background-size: 100%;
-  position: inherit;
 }
 
 #meme-text {
-  position: absolute;
-  padding: 5px;
+  width: 400px;
+  margin: 0;
+  position:absolute;
   text-shadow: 5px 5px 5px black;
   font-size: 30px;
   color: white;
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
+#fire {
+  background-color: red;
+}
+
+#water {
+  background-color: blue;
+}
+
+#earth {
+  background-color: green;
+}
+
+.input-image {
+  margin-top: 10px;
 }
