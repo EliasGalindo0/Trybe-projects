@@ -7,7 +7,10 @@
 
 #meme-image-container {
   margin: 20px auto;
-  width: 400px;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
   font-family: sans-serif;
   background-color: white;
   border: solid black 1px;
@@ -30,13 +33,15 @@
 }
 
 #meme-text {
-  width: 400px;
-  margin: 0;
+  width: 300px;
+  margin-top: 10px;
   position:absolute;
+  z-index: 1;
   text-shadow: 5px 5px 5px black;
   font-size: 30px;
   color: white;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .buttons {
@@ -53,6 +58,41 @@
 
 #earth {
   background-color: green;
+}
+
+#memes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+#meme-1 {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: solid black 1px;
+}
+
+#meme-2 {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: solid black 1px;
+}
+
+#meme-3 {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: solid black 1px;
+}
+
+#meme-4 {
+  width: 100px;
+  max-height: 100px;
+  margin: 5px;
+  border: solid black 1px;
 }
 
 .input-image {
