@@ -20,8 +20,10 @@
 
   <main class='main-form'>
     <form action="" method="get" id='evaluation-form'>
-      <input type="text" id="input-name" placeholder="Nome">
-      <input type="text" id="input-lastname" placeholder="Sobrenome">
+      <div class="first-input">
+        <input type="text" id="input-name" placeholder="Nome">
+        <input type="text" id="input-lastname" placeholder="Sobrenome">
+      </div>
       
       <div class='house-email'>
       <div>
@@ -49,6 +51,47 @@
           <input type="radio" id="fullstack" name="family" value="Fullstack">
         </label>
       </div>
+        <label for="frontend" id="label-family">Front end
+          <input type="radio" id="frontend" name="family" value="Frontend">
+        </label>
+        <label for="backend" id="label-family">Back end
+          <input type="radio" id="backend" name="family" value="Backend">
+        </label>
+        <label for="fullstack" id="label-family">FullStack
+          <input type="radio" id="fullstack" name="family" value="Fullstack">
+        </label>
+        </div>
+
+        <div>
+          <div> 
+            <label id='label-content'>Qual conteúdo você está com mais vontade de aprender? </label>
+          <label for="HoFs">HoFs
+            <input type="checkbox" name="" id="HoFs" value="HoFs">
+          </label>
+          <label for="Jest">Jest
+            <input type="checkbox" name="" id="Jest" value="Jest">
+          </label>
+          <label for="Promises">Promises
+            <input type="checkbox" name="" id="Promises" value="Promises">
+          </label>
+          <label for="React">React
+            <input type="checkbox" name="" id="React" value="React">
+          </label>
+          <label for="SQL">SQL
+            <input type="checkbox" name="" id="SQL" value="SQL">
+          </label>
+          <label for="Python">Python
+            <input type="checkbox" name="" id="Python" value="Python">
+          </label>
+          </div>
+        </div>
+
+        <div>
+          <label for="textarea" class="textarea">Deixe seu comentário:
+            <textarea name="" id="textarea" cols="30" rows="10" maxlength="500"></textarea>
+          </label>
+        </div>
+
     </form>
     <img src="images/trybewarts-colored.svg" alt="logo-trybewarts" id='trybewarts-forms-logo'>
   </main>

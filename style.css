@@ -36,16 +36,23 @@
 #evaluation-form {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 675px;
   align-content: space-around;
 }
 
+.first-input {
+  display: inline-flex;
+}
+
 #input-name {
-  display: flex;
   margin: 5px;
 }
 
 #input-lastname {
+  margin: 5px;
+}
+
+#input-name {
   margin: 5px;
 }
 
@@ -57,7 +64,7 @@
 /* .input-radio {
  
 } */
-label{
+label {
   margin: 5px;
 }
 
@@ -66,4 +73,8 @@ label{
   align-self: flex-end;
   max-width: 40%;
   height: 500px;
+}
+
+#label-content {
+  display: flex;
 }
