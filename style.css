@@ -61,9 +61,11 @@
   display: flex;
 }
 
-/* .input-radio {
- 
-} */
+.input-radio {
+  display: flex;
+ flex-direction: column;
+}
+
 label {
   margin: 5px;
 }
