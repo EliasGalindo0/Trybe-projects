@@ -35,6 +35,9 @@
   margin: 5px;
   display: flex;
 }
+label{
+  margin: 5px;
+}
 #trybewarts-forms-logo {
   height: 500px;
 }
