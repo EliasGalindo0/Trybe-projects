@@ -52,7 +52,6 @@
   margin: 5px;
 }
 
-
 #input-email {
   margin: 5px;
   display: flex;
@@ -60,7 +59,7 @@
 
 .input-radio {
   display: flex;
- flex-direction: column;
+  flex-direction: column;
 }
 
 label {
@@ -77,3 +76,6 @@ label {
 #label-content {
   display: flex;
 }
+
+
+
