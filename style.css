@@ -1,9 +1,17 @@
 * {
   margin: 0;
 }
+
 .header {
   display: flex;
+  justify-content: space-between;
   background-color: rgb(50, 167, 145);
   width: 100%;
-  height: 30px;
+  height: 60px;
+}
+
+.trybewarts-login {
+  display: flex;
+  align-items: center;
+  justify-items: flex-end;
 }
