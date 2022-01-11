@@ -23,6 +23,10 @@
   flex-direction: column;
   width: 100%;
 }
+.house-email {
+  display: flex;
+  align-items: center;
+}
 #evaluation-form {
   display: flex;
   flex-direction: column;
