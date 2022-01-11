@@ -1,7 +1,6 @@
 * {
   margin: 0;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -26,11 +25,22 @@
 }
 #evaluation-form {
   display: flex;
-  align-items: center;
-  width: 675px;
   flex-direction: column;
+  width: 675px;
+}
+#input-lastname {
+  margin: 5px;
+}
+#input-name {
+  margin: 5px;
+}
+#input-email {
+  margin: 5px;
+  display: flex;
 }
 #trybewarts-forms-logo {
+  display: flex;
   align-self: flex-end;
+  max-width: 40%;
   height: 500px;
 }
