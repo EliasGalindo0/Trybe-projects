@@ -16,3 +16,12 @@
   height: 30px;
   justify-content: center;
 }
+
+.main-form {
+  display: flex;
+}
+
+#evaluation-form {
+  display: flex;
+  width: 675px
+}
