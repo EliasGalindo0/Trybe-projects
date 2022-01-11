@@ -21,12 +21,16 @@
 }
 .main-form {
   display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 #evaluation-form {
   display: flex;
+  align-items: center;
   width: 675px;
   flex-direction: column;
 }
 #trybewarts-forms-logo {
+  align-self: flex-end;
   height: 500px;
 }
