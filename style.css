@@ -9,7 +9,6 @@
   width: 100%;
   height: 60px;
 }
-
 .trybewarts-login {
   display: flex;
   align-items: center;
@@ -19,4 +18,11 @@
 }
 .header h1 {
   align-self: center;
+}
+.main-form {
+  display: flex;
+}
+#evaluation-form {
+  display: flex;
+  width: 675px
 }
