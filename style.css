@@ -2,6 +2,9 @@
   margin: 0;
 }
 
+hr {
+  margin: 10px;
+}
 
 label {
   margin: 5px;
@@ -13,6 +16,16 @@ label {
   background-color: rgb(50, 167, 145);
   width: 100%;
   height: 60px;
+}
+
+.footer {
+  margin-bottom: 0;
+  background-color: rgb(50, 167, 145);
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: larger;
+  color: antiquewhite;
 }
 
 .trybewarts-login {
@@ -29,34 +42,64 @@ label {
 
 .main-form {
   display: flex;
-  /* align-items: center; */
-  justify-content: space-around;
-}
-
-.house-email {
-  display: flex;
   align-items: center;
-}
-
-
-#input-lastname {
+  justify-content: space-around;
   margin: 5px;
-}
-
-#input-name {
-  margin: 5px;
-}
-
-#input-email {
-  margin: 5px;
-  display: flex;
+  text-align: center;
 }
 
 #evaluation-form {
   display: flex;
   flex-direction: column;
-  align-self: center;
   width: 675px;
+  align-content: space-around;
+}
+
+.first-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+#input-name {
+  margin: 5px;
+  width: 50%;
+}
+
+#input-lastname {
+  margin: 5px;
+  width: 50%;
+}
+
+.house-email {
+  display: flex;
+  justify-content: space-between;
+}
+
+#input-email {
+  margin: 5px;
+  width: 50%;
+}
+
+#house {
+  margin: 5px;
+  width: 50%;
+}
+
+.family-radio {
+  display: flex;
+}
+
+.label-family {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+#label-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #trybewarts-forms-logo {
@@ -67,6 +110,6 @@ label {
   display: flex;
 }
 
-/* #submit-btn {
-  
-} */
+#text-area {
+ margin: 10px;
+}
