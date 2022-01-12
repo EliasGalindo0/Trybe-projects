@@ -1,4 +1,6 @@
 const buttonEnter = document.querySelector('#submit-btn-header');
+const buttonSubmit = document.querySelector('#submit-btn');
+const agreement = document.querySelector('#agreement');
 
 function validatePassword() {
   const email = document.querySelector('#email').value;
@@ -10,3 +12,13 @@ function validatePassword() {
   }
 }
 buttonEnter.addEventListener('click', validatePassword);
+
+function ableSubmit() {
+  if (agreement.checked === true) {
+    buttonSubmit.removeAttribute('disabled');
+  }
+  else {
+    buttonSubmit.setAttribute('disabled', 'disabled');
+  }
+}
+agreement.addEventListener('click', ableSubmit);
