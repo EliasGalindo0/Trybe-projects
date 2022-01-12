@@ -106,10 +106,6 @@ label {
   height: 500px;
 }
 
-#label-content {
-  display: flex;
-}
-
 #text-area {
- margin: 10px;
+  margin: 10px;
 }
