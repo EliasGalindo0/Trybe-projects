@@ -16,8 +16,7 @@ buttonEnter.addEventListener('click', validatePassword);
 function ableSubmit() {
   if (agreement.checked === true) {
     buttonSubmit.removeAttribute('disabled');
-  }
-  else {
+  } else {
     buttonSubmit.setAttribute('disabled', 'disabled');
   }
 }
