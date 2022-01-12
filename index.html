@@ -8,6 +8,7 @@
   <title>Projeto Trybewarts</title>
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
     <img src="images/trybewarts-header-logo.svg" alt="" class="trybewarts-header-logo">
     <h1 id="trybewarts-header-title">Trybewarts</h1>
@@ -17,14 +18,14 @@
       <button type="submit" id='submit-btn'>Entrar</button>
     </form>
   </header>
-
   <main class='main-form'>
     <form action="" method="get" id='evaluation-form'>
+      <!-- input name e lastname -->
       <div class="first-input">
         <input type="text" id="input-name" placeholder="Nome">
         <input type="text" id="input-lastname" placeholder="Sobrenome">
       </div>
-      
+      <!-- email e house -->
       <div class='house-email'>
       <div>
         <input type="email" id="input-email" placeholder="Email">
@@ -41,6 +42,7 @@
       </div>
     </div>
     <hr>
+    <!-- label family -->
     <div class="input-radio">
       <label for="" id="label-family">Qual sua família?</label>
       <label for="frontend">Front end
@@ -53,6 +55,7 @@
         <input type="radio" id="fullstack" name="family" value="FullStack">
       </label>
     </div>
+    <!-- conteudo -->
         <div>
           <div> 
             <label id='label-content'>Qual conteúdo você está com mais vontade de aprender? </label>
@@ -77,6 +80,7 @@
           </div>
         </div>
         <hr>
+    <!-- Rate -->
         <div class="rate">
           <label for="" id="label-rate">Como você avalia a Trybewarts?</label>
           <label for="rate-1">1
@@ -110,20 +114,20 @@
             <input type="radio" id="rate-10" name="rate" value="10">
           </label>
         </div>
-
+    <!-- textarea -->
         <div>
           <label for="textarea" class="textarea">Deixe seu comentário:
             <textarea name="" id="textarea" cols="30" rows="10" maxlength="500"></textarea>
           </label>
         </div>
-
+    <!-- agreement -->
         <div>
           <label for="agreement" id="label-infos">Você concorda com o uso das informações acima?
             <input type="checkbox" id="agreement" name="agreement" required>
           </label>
         </div>
-
     </form>
+    <!-- iamagen trybewarts -->
     <img src="images/trybewarts-colored.svg" alt="logo-trybewarts" id='trybewarts-forms-logo'>
   </main>
 
