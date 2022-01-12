@@ -1,4 +1,4 @@
-const buttonEnter = document.querySelector('#submit-btn');
+const buttonEnter = document.querySelector('#submit-btn-header');
 
 function validatePassword() {
   const email = document.querySelector('#email').value;

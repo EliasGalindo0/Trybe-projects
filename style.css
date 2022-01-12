@@ -2,6 +2,11 @@
   margin: 0;
 }
 
+
+label {
+  margin: 5px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -24,8 +29,8 @@
 
 .main-form {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  /* align-items: center; */
+  justify-content: space-around;
 }
 
 .house-email {
@@ -33,11 +38,6 @@
   align-items: center;
 }
 
-#evaluation-form {
-  display: flex;
-  flex-direction: column;
-  width: 675px;
-}
 
 #input-lastname {
   margin: 5px;
@@ -52,17 +52,21 @@
   display: flex;
 }
 
-label {
-  margin: 5px;
+#evaluation-form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 675px;
 }
 
 #trybewarts-forms-logo {
-  display: flex;
-  align-self: flex-end;
-  max-width: 40%;
   height: 500px;
 }
 
 #label-content {
   display: flex;
 }
+
+/* #submit-btn {
+  
+} */
