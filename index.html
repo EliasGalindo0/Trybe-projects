@@ -37,7 +37,7 @@
         <div class="house-email">
           <input type="email" id="input-email" placeholder="Email" />
 
-          <label for="house">Casa:</label>
+          <label for="house" id="label-house">Casa:</label>
           <select name="" id="house">
             <option value="Gitnória" id="gitnoria-house">Gitnória</option>
             <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
@@ -78,18 +78,20 @@
             <label id="label-content"
               >Qual conteúdo você está com mais vontade de aprender?</label
             >
-            <label for="HoFs"
-              >HoFs
-              <input type="checkbox" name="" id="HoFs" value="HoFs" />
-            </label>
-            <label for="Jest"
-              >Jest
-              <input type="checkbox" name="" id="Jest" value="Jest" />
-            </label>
-            <label for="Promises"
-              >Promises
-              <input type="checkbox" name="" id="Promises" value="Promises" />
-            </label>
+            <div>
+              <label for="HoFs"
+                >HoFs
+                <input type="checkbox" name="" id="HoFs" value="HoFs" />
+              </label>
+              <label for="Jest"
+                >Jest
+                <input type="checkbox" name="" id="Jest" value="Jest" />
+              </label>
+              <label for="Promises"
+                >Promises
+                <input type="checkbox" name="" id="Promises" value="Promises" />
+              </label>
+            </div>
             <label for="React"
               >React
               <input type="checkbox" name="" id="React" value="React" />
@@ -106,7 +108,7 @@
         </div>
         <hr />
 
-        <div>
+        <div class="label-rate">
           <label for="" id="label-rate">Como você avalia a Trybewarts?</label>
           <label for="rate-1"
             >1
@@ -150,22 +152,22 @@
           </label>
         </div>
 
-        <div>
-          <label for="textarea" class="textarea">Deixe seu comentário:</label>
-          <textarea
-            name=""
-            id="textarea"
-            cols="30"
-            rows="10"
-            maxlength="500"
-            style="resize: none"
-          ></textarea>
+        <div id="div-text-area">
+            <label for="textarea" class="textarea">Deixe seu comentário:</label>
+            <textarea
+              name=""
+              id="textarea"
+              cols="30"
+              rows="10"
+              maxlength="500"
+              style="resize: none"
+            ></textarea>
         </div>
 
-        <div>
+        <div class="label-infos">
           <label for="agreement" id="label-infos"
             >Você concorda com o uso das informações acima?
-            <input type="checkbox" id="agreement" name="agreement"/>
+            <input type="checkbox" id="agreement" name="agreement" />
           </label>
         </div>
         <button type="submit" id="submit-btn" disabled>Enviar</button>
@@ -179,8 +181,9 @@
       </div>
     </main>
 
-    <footer class="footer">Direitos reservados à Trybewarts©</footer>
-
+    <footer class="footer">
+      <div>Direitos reservados à Trybewarts©</div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
