@@ -26,10 +26,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 5px;
 }
 
 .house-email {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
@@ -77,5 +78,14 @@ label {
   display: flex;
 }
 
+hr {
+  margin: 15px;
+}
 
+.rate {
+  margin-bottom: 15px;
+}
 
+#textarea {
+  resize: none;
+}
