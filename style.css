@@ -73,7 +73,7 @@ label {
 
 #input-email {
   margin: 5px;
-  height: 40px;
+  height: 35px;
   width: 50%;
   border-radius: 5px;
 }
@@ -82,7 +82,8 @@ label {
   margin: 5px;
   width: 50%;
   border-radius: 5px;
-  font-size: large;
+  font-size: 28px;
+  text-align: center;
 }
 
 #label-house {
@@ -91,19 +92,19 @@ label {
 
 .family-radio {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
 }
 
 .label-family {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 50%;
+  align-items: flex-start;
+  margin: 10px;
 }
 
 #label-content {
   display: flex;
-  flex-direction: column;
   margin: 10px;
 }
 
@@ -140,7 +141,7 @@ label {
   margin-bottom: 40px;
   border-radius: 8px;
   height: 35px;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 20px;
   background-color: blueviolet;
   box-shadow: 5px 5px 10px black;
@@ -150,6 +151,7 @@ label {
   transform: scale(1.1);
   cursor: pointer;
 }
+
 .footer {
   margin-bottom: 0;
   display: flex;
