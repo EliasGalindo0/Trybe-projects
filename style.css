@@ -19,12 +19,13 @@ label {
   height: 60px;
 }
 
+.trybewarts-header-logo {
+  margin-left: 10px;
+}
+
 .trybewarts-login {
   display: flex;
-  align-items: center;
-  height: 30px;
-  justify-content: center;
-  align-self: center;
+  padding: 10px;
 }
 
 .header h1 {
@@ -87,7 +88,6 @@ label {
   width: 50%;
   border-radius: 5px;
   font-size: 20px;
-  /* text-align: center; */
 }
 
 #label-house {
@@ -125,8 +125,6 @@ label {
 
 #trybewarts-forms-logo {
   height: 500px;
-  box-shadow: 3px 3px 15px black;
-  border-radius: 20px;
 }
 
 #div-text-area {
