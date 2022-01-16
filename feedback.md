@@ -11,7 +11,7 @@
 
 ---
 
-**Nota**: /ESCREVAM SUA NOTA AQUI/
+**Nota**: /ESCREVAM SUA NOTA AQUI/ 10
 
 ---
 
@@ -19,11 +19,11 @@
 
 ---
 
-**Observações**: /ESCREVAM SUAS OBSERVAÇÕES AQUI/
+**Observações**: /ESCREVAM SUAS OBSERVAÇÕES AQUI/ Foi uma experiência muito boa e diferente. A maioria das pessoas já fez algum trabalho em grupo em algum momento da vida, mas para mim essa experiência foi bem interessante, desde a parte de dividir o trablho até a sua execução em si.
 
 ---
 
-**Pessoas integrantes da dupla**: /ESCREVAM SEUS NOMES AQUI/
+**Pessoas integrantes da dupla**: /ESCREVAM SEUS NOMES AQUI/ Elias Pires Abrão Galindo e João Cabral de Medeiros Neto
 
 ---
 

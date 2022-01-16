@@ -28,6 +28,17 @@ label {
   padding: 10px;
 }
 
+.trybewarts-login input, button {
+  border-radius: 10px;
+}
+
+.trybewarts-login button {
+  border-radius: 10px;
+  background-color: blueviolet;
+  font-weight: 900;
+  font-size: 15px;
+}
+
 .header h1 {
   align-self: center;
 }
@@ -35,7 +46,7 @@ label {
 .main-form {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 5px;
   text-align: center;
   font-size: larger;
