@@ -28,7 +28,7 @@ label {
   padding: 10px;
 }
 
-.trybewarts-login input, button {
+.trybewarts-login input,button {
   border-radius: 10px;
 }
 
@@ -57,7 +57,7 @@ label {
   flex-direction: column;
   width: 675px;
   align-content: space-around;
-  box-shadow: 0px 0px 15px black;
+  box-shadow: 1px 1px 15px black;
   padding: 10px;
   border-radius: 10px;
   margin-top: 10px;
