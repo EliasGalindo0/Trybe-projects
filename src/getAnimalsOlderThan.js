@@ -5,5 +5,3 @@ const getAnimalsOlderThan = (animal, age) => species.find((specie) => specie.nam
   .residents.every((resAge) => resAge.age >= age);
 
 module.exports = getAnimalsOlderThan;
-
-console.log(getAnimalsOlderThan('lions', 7));
