@@ -24,24 +24,12 @@ function createProductItemElement({ sku, name, image }) {
   return section;
 }
 
-const items = async () => {
-  const data = await fetchProducts('computador');
-  const products = data.results;
-
-  products.forEach((product) => {
-    const { id, title, thumbnail } = product;
-    const itemMarket = (createProductItemElement({ sku: id, name: title, image: thumbnail }));
-    document.querySelector('.items').appendChild(itemMarket);
-  });
-};
-
 function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
 function cartItemClickListener(event) {
-  // 
-  
+  // seu código aqui
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
@@ -52,17 +40,36 @@ function createCartItemElement({ sku, name, salePrice }) {
   return li;
 }
 
-const getItemCart = async () => {
-  const data = await fetchItem('MLB1341706310');
+const inserirCarrinho = (item) => {
+  const cartItems = document.querySelector('.cart__items'); 
+  const criaItemCarrinho = createCartItemElement(item);
+  cartItems.appendChild(criaItemCarrinho);
+};
+
+const getItemCart = async (event) => {
+  const getSku = getSkuFromProductItem(event.target.parentNode);
+  const data = await fetchItem(getSku);
   const itemCart = { 
     sku: data.id, 
     name: data.title, 
-    salePrice: data.price };
-  document.querySelector('.cart__items').appendChild(createCartItemElement(itemCart));
+    salePrice: data.price,
+  };
+  inserirCarrinho(itemCart);
 };
-getItemCart();
-// document.querySelector('.item__add').addEventListener('click', getItemCart());
 
-  window.onload = () => { 
+const items = async () => {
+  const data = await fetchProducts('computador');
+  const products = data.results;
+
+  products.forEach((product) => {
+    const { id, title, thumbnail } = product;
+    const itemMarket = (createProductItemElement({ sku: id, name: title, image: thumbnail }));
+    const xablau = document.querySelector('.items');
+    xablau.appendChild(itemMarket);
+    xablau.addEventListener('click', getItemCart);
+  });
+};
+
+  window.onload = () => {
   items();
 };
