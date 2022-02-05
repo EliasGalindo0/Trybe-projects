@@ -1,3 +1,5 @@
+const cartParent = document.querySelector('.cart__items');
+
 // Recebe um src como parâmetro e cria um elemento img com o parâmetro passado 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -87,8 +89,16 @@ const productsOnScreen = async () => {
   });
 };
 
+const clearCart = () => {
+  cartParent.innerHTML = '';
+};
+
+const clearButton = document.querySelector('.empty-cart');
+clearButton.addEventListener('click', clearCart);
+
   window.onload = () => {
     productsOnScreen();
     getSavedCartItems();
     saveCartItems();
+    clearCart();
 };
