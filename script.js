@@ -89,4 +89,6 @@ const productsOnScreen = async () => {
 
   window.onload = () => {
     productsOnScreen();
+    getSavedCartItems();
+    saveCartItems();
 };
