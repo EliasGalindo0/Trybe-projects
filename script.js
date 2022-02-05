@@ -1,5 +1,3 @@
-const cartParent = document.querySelector('.cart__items');
-
 // Recebe um src como parâmetro e cria um elemento img com o parâmetro passado 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -75,9 +73,26 @@ const getParametersItemCart = async (event) => {
   insertItemCart(itemCart);
 };
 
+// usa a função que cria os elementos para criar um section, classe loadind e texto loading. após criar o elemento, faz um append na section pai (items).
+const loader = (nodeParent) => {
+  const createLoader = createCustomElement('section', 'loading', 'Loading');
+  nodeParent.appendChild(createLoader);
+};
+
+// remove o elemento criado na função acima logo após fazer o fetch na fução productsOnScreen, uma vez que é chamada após o fetch, tendo, as duas funções loading, como parâmetro o elemento pai quando são chamadas na função abaixo.
+const loadcomplet = (nodeParent) => {
+  const loaded = document.querySelector('.loading');
+  nodeParent.removeChild(loaded);
+};
+
 // função assíncrona que recebe o resultado da API e, cria um objeto com 3 valores, chama a função que cria os elementos passando para ela os parâmetros obtidos por meio do destructuring. É carregada onLoad e tem o listener que  chama a função que alimenta os parâmetros dos itens quando clicada e faz o appendChild no carrinho.
 const productsOnScreen = async () => {
+  const itemsSection = document.querySelector('.items');
+  loader(itemsSection);
+
   const data = await fetchProducts('computador');
+  loadcomplet(itemsSection);
+
   const products = data.results;
 
   products.forEach((product) => {
@@ -89,8 +104,10 @@ const productsOnScreen = async () => {
   });
 };
 
+// limpa os elementos do carrinho
 const clearCart = () => {
-  cartParent.innerHTML = '';
+  const cartElements = document.querySelector('.cart__items');
+  cartElements.innerHTML = '';
 };
 
 const clearButton = document.querySelector('.empty-cart');
@@ -98,7 +115,7 @@ clearButton.addEventListener('click', clearCart);
 
   window.onload = () => {
     productsOnScreen();
-    getSavedCartItems();
     saveCartItems();
+    getSavedCartItems();
     clearCart();
 };
