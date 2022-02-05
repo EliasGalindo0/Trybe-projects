@@ -118,6 +118,6 @@ clearButton.addEventListener('click', clearCart);
   window.onload = () => {
     productsOnScreen();
     // saveCartItems();
-    getSavedCartItems(itemCart);
+    // getSavedCartItems(itemCart);
     clearCart();
 };
