@@ -58,6 +58,7 @@ const insertItemCart = (item) => {
   const cartItems = document.querySelector('.cart__items'); 
   const createItemCart = createCartItemElement(item);
   cartItems.appendChild(createItemCart);
+  getSavedCartItems();
 };
 
 // função assíncrona, que recebe o resultado da consulta à API e monta um obejto itemCart, que será enviado como parâmetro para a função acima. Obs. getSku
@@ -71,6 +72,7 @@ const getParametersItemCart = async (event) => {
     salePrice: data.price,
   };
   insertItemCart(itemCart);
+  saveCartItems(itemCart);
 };
 
 // usa a função que cria os elementos para criar um section, classe loadind e texto loading. após criar o elemento, faz um append na section pai (items).
@@ -115,7 +117,7 @@ clearButton.addEventListener('click', clearCart);
 
   window.onload = () => {
     productsOnScreen();
-    saveCartItems();
-    getSavedCartItems();
+    // saveCartItems();
+    getSavedCartItems(itemCart);
     clearCart();
 };
