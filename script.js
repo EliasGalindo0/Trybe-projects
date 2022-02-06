@@ -35,7 +35,7 @@ function getSkuFromProductItem(item) {
 
 const eraseItem = (event) => {
   const cartItemsErase = document.querySelector('.cart__item');
-  const eraseItemTarget = cartItemsErase.parentNode.removeChild(cartItemsErase);
+  const eraseItemTarget = event.target.parentNode.removeChild(cartItemsErase);
   return eraseItemTarget;
 };
 
@@ -71,13 +71,14 @@ const getParametersItemCart = async (event) => {
     name: data.title, 
     salePrice: data.price,
   };
+
   insertItemCart(itemCart);
   saveCartItems(itemCart);
 };
 
 // usa a função que cria os elementos para criar um section, classe loadind e texto loading. após criar o elemento, faz um append na section pai (items).
 const loader = (nodeParent) => {
-  const createLoader = createCustomElement('section', 'loading', 'Loading');
+  const createLoader = createCustomElement('section', 'loading', 'carregando...');
   nodeParent.appendChild(createLoader);
 };
 
