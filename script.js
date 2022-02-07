@@ -1,3 +1,5 @@
+const cartItems = document.querySelector('.cart__items');
+
 // Recebe um src como parâmetro e cria um elemento img com o parâmetro passado 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -15,7 +17,6 @@ function createCustomElement(element, className, innerText) {
 }
 
 // recebe um objeto como parâmetro, cria section com a classe .item, e adicina o elemento pronto ao HTML. Esses elementos são criados através da função acima, sendo que a imagem é feita através da primeira função.
-
 function createProductItemElement({ sku, name, image }) {
   const section = document.createElement('section');
   section.className = 'item';
@@ -34,8 +35,7 @@ function getSkuFromProductItem(item) {
 }
 
 const eraseItem = (event) => {
-  const cartItemsErase = document.querySelector('.cart__item');
-  const eraseItemTarget = event.target.parentNode.removeChild(cartItemsErase);
+  const eraseItemTarget = event.target.remove();
   return eraseItemTarget;
 };
 
@@ -53,12 +53,11 @@ function createCartItemElement({ sku, name, salePrice }) {
   return li;
 }
 
-// recebe um item como parâmetro, captura o elemento pai dos itens do carrinho ('ol'), chama a função createCartItemElement (que retorna um li com os valores: sku, name, price) e adiciona os itens, que forem clicados, no elemento pai. -> explicação da última parte na função getParametersItemCart.
+// recebe um item como parâmetro, captura o elemento pai dos itens do carrinho ('ol'), chama a função createCartItemElement (que retorna um li com os valores: sku, name, price) e adiciona os itens, que forem clicados, no elemento pai.
 const insertItemCart = (item) => {
-  const cartItems = document.querySelector('.cart__items'); 
   const createItemCart = createCartItemElement(item);
   cartItems.appendChild(createItemCart);
-  getSavedCartItems();
+  saveCartItems(cartItems.innerHTML);
 };
 
 // função assíncrona, que recebe o resultado da consulta à API e monta um obejto itemCart, que será enviado como parâmetro para a função acima. Obs. getSku
@@ -71,9 +70,7 @@ const getParametersItemCart = async (event) => {
     name: data.title, 
     salePrice: data.price,
   };
-
   insertItemCart(itemCart);
-  saveCartItems(itemCart);
 };
 
 // usa a função que cria os elementos para criar um section, classe loadind e texto loading. após criar o elemento, faz um append na section pai (items).
@@ -109,16 +106,19 @@ const productsOnScreen = async () => {
 
 // limpa os elementos do carrinho
 const clearCart = () => {
-  const cartElements = document.querySelector('.cart__items');
-  cartElements.innerHTML = '';
+  cartItems.innerHTML = '';
 };
-
 const clearButton = document.querySelector('.empty-cart');
 clearButton.addEventListener('click', clearCart);
+clearCart();
+
+const getItemsFromLocalStorage = () => {
+  const savedItems = getSavedCartItems('cartItems');
+  cartItems.innerHTML = savedItems;
+  cartItems.addEventListener('click', eraseItem);
+};
 
   window.onload = () => {
     productsOnScreen();
-    // saveCartItems();
-    // getSavedCartItems(itemCart);
-    clearCart();
+    getItemsFromLocalStorage();
 };
