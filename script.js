@@ -64,8 +64,6 @@ function changeClassChoosen(e) {
 function reset() {
   window.location.reload();
 }
-// function answerGenerate() {
-// }
 
 colorList.addEventListener('click', changeClassChoosen);
 resetButton.addEventListener('click', reset);
