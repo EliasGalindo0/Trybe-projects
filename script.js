@@ -1,4 +1,6 @@
+const liElements = document.getElementsByClassName('cart__item');
 const cartItems = document.querySelector('.cart__items');
+const clearButton = document.querySelector('.empty-cart');
 
 // Recebe um src como parâmetro e cria um elemento img com o parâmetro passado 
 function createProductImageElement(imageSource) {
@@ -34,15 +36,11 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
-const eraseItem = (event) => {
+function cartItemClickListener(event) {
   const eraseItemTarget = event.target.remove();
   return eraseItemTarget;
-};
-
-function cartItemClickListener(event) {
-  const liElements = document.querySelector('.cart__item');
-  liElements.addEventListener('click', eraseItem(event));
-}
+  }
+  cartItems.addEventListener('click', cartItemClickListener);
 
 // cria os elementos 'li' que irão para o carrinho de compras. recebe um objeto com os valores obtivos através da função getParametersItemCart e adciona um listener às 'li' que, ao clicar, chama a função cartItemClickListener (útil para tirar os itens do carrinho ao clicar neles)
 function createCartItemElement({ sku, name, salePrice }) {
@@ -107,18 +105,16 @@ const productsOnScreen = async () => {
 // limpa os elementos do carrinho
 const clearCart = () => {
   cartItems.innerHTML = '';
+
 };
-const clearButton = document.querySelector('.empty-cart');
 clearButton.addEventListener('click', clearCart);
-clearCart();
 
 const getItemsFromLocalStorage = () => {
   const savedItems = getSavedCartItems('cartItems');
   cartItems.innerHTML = savedItems;
-  cartItems.addEventListener('click', eraseItem);
 };
+getItemsFromLocalStorage();
 
-  window.onload = () => {
-    productsOnScreen();
-    getItemsFromLocalStorage();
+window.onload = () => {
+  productsOnScreen();
 };
