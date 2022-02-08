@@ -1,4 +1,3 @@
-const liElements = document.getElementsByClassName('cart__item');
 const cartItems = document.querySelector('.cart__items');
 const clearButton = document.querySelector('.empty-cart');
 
@@ -105,7 +104,6 @@ const productsOnScreen = async () => {
 // limpa os elementos do carrinho
 const clearCart = () => {
   cartItems.innerHTML = '';
-
 };
 clearButton.addEventListener('click', clearCart);
 
