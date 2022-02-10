@@ -139,6 +139,18 @@ body {
   height: 500px;
   overflow-y: scroll;
 }
+.cart__items li{
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 2px;
+  text-align: center;
+  padding: 2px;
+  font-weight: 600;
+}
+.cart__items li:hover{
+  background-color: aliceblue;
+}
 
 .empty-cart {
   width: 170px;
@@ -146,4 +158,6 @@ body {
   margin: 0 auto;
   border: 2px solid rgb(5, 52, 219);
   background-color: rgb(249, 249, 246);
+  border-radius: 8px;
+  cursor: pointer;
 }
