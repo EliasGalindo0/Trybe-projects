@@ -139,7 +139,8 @@ body {
   height: 500px;
   overflow-y: scroll;
 }
-.cart__items li{
+
+.cart__items li {
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
@@ -148,7 +149,8 @@ body {
   padding: 2px;
   font-weight: 600;
 }
-.cart__items li:hover{
+
+.cart__items li:hover {
   background-color: aliceblue;
 }
 

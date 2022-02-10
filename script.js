@@ -33,6 +33,7 @@ const createProductItemElement = ({ sku, name, image }) => {
 // recebe um item como parâmetro e captura os spans com a classe .item__sku. Com o elemento capturado, insere seu texto onde ou quando for chamada a função.
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
+// função responsável por calcular o valor total dos itens que estão no carrinho. **
 const totalPrice = async () => {
   let sum = 0;
   const amount = document.querySelector('.total-price'); 
@@ -45,6 +46,7 @@ const totalPrice = async () => {
     amount.innerHTML = sum;
 };
 
+// captura os elementos que representam os itens de dentro do carrinho. Se houver itens no carrinho, remove aqueles que são clicados. Chama a função total price para calcular novamente o valor do carrinho atualizado.
 const cartItemClickListener = (event) => {
   const liElement = document.querySelector('.cart__item');
   if (liElement) {
@@ -121,6 +123,7 @@ const clearCart = () => {
 };
 clearButton.addEventListener('click', clearCart);
 
+// recupera os items salvos no local storage e adiciona o listener para chamar a função para apagar os itens novamente.
 const getItemsFromLocalStorage = () => {
   const savedItems = getSavedCartItems('cartItems');
   cartItems.innerHTML = savedItems;
