@@ -1,12 +1,13 @@
 const data = require('../data/zoo_data');
+const { species, hours } = require('../data/zoo_data');
 
-const daysType = ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'];
-const animalsType = data.species.map((item) => item.name);
+const days = ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'];
+const animalsType = species.map((item) => item.name);
 
 const getDay = (typeDay) => {
-  const animals = data.species.filter((animal) => animal.availability
+  const animals = species.filter((animal) => animal.availability
     .some((item) => item === typeDay));
-  const hour = `Open from ${data.hours[typeDay].open}am until ${data.hours[typeDay].close}pm`;
+  const hour = `Open from ${hours[typeDay].open}am until ${hours[typeDay].close}pm`;
   if (typeDay === 'Monday') return { officeHour: 'CLOSED', exhibition: 'The zoo will be closed!' };
   return { officeHour: hour, exhibition: animals.map((item) => item.name) };
 };
@@ -24,11 +25,13 @@ const objSchedule = {
 function getSchedule(scheduleTarget) {
   if (!scheduleTarget) return objSchedule;
   if (!animalsType.some((item) => scheduleTarget === item)
-  && !daysType.some((item) => scheduleTarget === item)) return objSchedule;
+  && !days.some((item) => scheduleTarget === item)) return objSchedule;
   if (animalsType.some((item) => scheduleTarget === item)) {
-    return data.species.find((element) => element.name === scheduleTarget).availability;
+    return species.find((element) => element.name === scheduleTarget).availability;
   }
   return { [scheduleTarget]: getDay(scheduleTarget) };
 }
 
 module.exports = getSchedule;
+
+console.log(getSchedule());
