@@ -6,7 +6,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <p>Sistema Solar</p> */}
         <Header />
         <SolarSystem />
       </div>
