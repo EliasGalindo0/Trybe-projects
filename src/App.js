@@ -21,6 +21,7 @@ class App extends React.Component {
     super();
     this.state = defaultState;
     this.onInputChange = this.onInputChange.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
   onInputChange(event) {
@@ -99,6 +100,7 @@ class App extends React.Component {
   }
 
   render() {
+    const showCards = this.state;
     const {
       cardName,
       cardDescription,
@@ -139,6 +141,19 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        { showCards.cardSaved.map((card) => (
+          <Card
+            key={ card.cardName }
+            cardName={ card.cardName }
+            cardDescription={ card.cardDescription }
+            cardAttr1={ card.cardAttr1 }
+            cardAttr2={ card.cardAttr2 }
+            cardAttr3={ card.cardAttr3 }
+            cardImage={ card.cardImage }
+            cardRare={ card.cardRare }
+            cardTrunfo={ card.cardTrunfo }
+          />
+        ))}
       </div>
     );
   }
