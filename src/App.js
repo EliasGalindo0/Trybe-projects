@@ -2,22 +2,24 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 
+const defaultState = {
+  cardName: '',
+  cardDescription: '',
+  cardAttr1: '0',
+  cardAttr2: '0',
+  cardAttr3: '0',
+  cardImage: '',
+  cardRare: 'normal',
+  cardTrunfo: false,
+  isSaveButtonDisabled: true,
+  hasTrunfo: false,
+  cardSaved: [],
+};
+
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
-      cardImage: '',
-      cardRare: 'normal',
-      cardTrunfo: false,
-      isSaveButtonDisabled: true,
-      hasTrunfo: false,
-      cards: [],
-    };
+    this.state = defaultState;
     this.onInputChange = this.onInputChange.bind(this);
   }
 
@@ -40,9 +42,8 @@ class App extends React.Component {
       cardAttr3,
       cardImage,
       cardTrunfo,
-      hasTrunfo,
       cardRare,
-      cards,
+      cardSaved,
     } = this.state;
 
     const currentCard = {
@@ -54,19 +55,13 @@ class App extends React.Component {
       cardImage,
       cardTrunfo,
       cardRare,
-      hasTrunfo,
     };
-    this.setState(({
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
-      cardImage: '',
-      cardRare: 'normal',
-    }), () => {
+    const cards = [...cardSaved, currentCard];
+    const superTrunfo = cards.some((card) => card.cardTrunfo);
+    this.setState(defaultState, () => {
       this.setState({
-        cards: [...cards, currentCard],
+        cardSaved: cards,
+        hasTrunfo: superTrunfo,
       });
     });
   }
@@ -80,26 +75,26 @@ class App extends React.Component {
       cardAttr3,
       cardImage,
       cardRare,
-      cardTrunfo,
-      // hasTrunfo,
     } = this.state;
 
     let disabled = false;
-    let superTrunfo = false;
-    const MAX = 90;
-    const MIN = 0;
+    const max = 90;
+    const min = 0;
     const maxSum = 210;
     const sum = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
-    if (cardAttr1 > MAX || cardAttr1 < MIN) disabled = true;
-    if (cardAttr2 > MAX || cardAttr2 < MIN) disabled = true;
-    if (cardAttr3 > MAX || cardAttr3 < MIN) disabled = true;
-    if (!cardName || !cardImage || !cardDescription) disabled = true;
-    if (sum > maxSum) disabled = true;
-    if (!cardRare) disabled = true;
-    if (!cardTrunfo) superTrunfo = true;
+    if (!cardName
+      || !cardDescription
+      || !cardImage
+      || !cardRare
+      || sum > maxSum
+      || cardAttr1 > max
+      || cardAttr1 < min
+      || cardAttr2 > max
+      || cardAttr2 < min
+      || cardAttr3 > max
+      || cardAttr3 < min) disabled = true;
     this.setState(() => ({
       isSaveButtonDisabled: disabled,
-      hasTrunfo: superTrunfo,
     }));
   }
 
