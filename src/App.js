@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import DisplayCards from './components/DisplayCards';
+import './App.css';
 
 const defaultState = {
   cardName: '',
@@ -22,6 +24,7 @@ class App extends React.Component {
     this.state = defaultState;
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.deleteCard = this.deleteCard.bind(this);
   }
 
   onInputChange(event) {
@@ -99,6 +102,13 @@ class App extends React.Component {
     }));
   }
 
+  deleteCard(cards) {
+    this.setState((prevState) => ({
+      cardSaved: prevState.cardSaved.filter((card) => card.cardName !== cards),
+      hasTrunfo: false,
+    }));
+  }
+
   render() {
     const showCards = this.state;
 
@@ -113,19 +123,22 @@ class App extends React.Component {
         <Card
           { ...this.state }
         />
-        { showCards.cardSaved.map((card) => (
-          <Card
-            key={ card.cardName }
-            cardName={ card.cardName }
-            cardDescription={ card.cardDescription }
-            cardAttr1={ card.cardAttr1 }
-            cardAttr2={ card.cardAttr2 }
-            cardAttr3={ card.cardAttr3 }
-            cardImage={ card.cardImage }
-            cardRare={ card.cardRare }
-            cardTrunfo={ card.cardTrunfo }
-          />
-        ))}
+        <section>
+          { showCards.cardSaved.map((card) => (
+            <DisplayCards
+              key={ card.cardName }
+              cardName={ card.cardName }
+              cardDescription={ card.cardDescription }
+              cardAttr1={ card.cardAttr1 }
+              cardAttr2={ card.cardAttr2 }
+              cardAttr3={ card.cardAttr3 }
+              cardImage={ card.cardImage }
+              cardRare={ card.cardRare }
+              cardTrunfo={ card.cardTrunfo }
+              deleteCard={ this.deleteCard }
+            />
+          ))}
+        </section>
       </div>
     );
   }
