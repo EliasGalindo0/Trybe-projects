@@ -26,8 +26,8 @@ button {
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-items: center;
   height: 400px;
+  justify-items: center;
   margin-left: 30px;
   padding: 15px;
   text-align: center;
@@ -40,8 +40,8 @@ button {
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-items: center;
   height: 400px;
+  justify-items: center;
   margin-left: 30px;
   padding: 15px;
   width: 300px;
