@@ -1,31 +1,48 @@
-
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-form {
+.form {
   border: 1px solid gray;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  margin: 30px 100px;
+  margin: 30px;
   padding: 20px;
   width: 35%;
 }
 
 button {
-  border-radius: 15px;
-  font-size: 1.1rem;
+  border-radius: 10px;
+  font-size: 1rem;
   margin: 10px;
   padding: 15px;
 }
 
 .card {
-  background-color: blue;
+  background-color: antiquewhite;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
   border: 1px solid black;
-  border-radius: 15px;
+  border-radius: 10px;
   height: 400px;
-  margin: 15px;
+  margin-left: 30px;
+  padding: 15px;
+  width: 300px;
+  text-align: center;
+}
+
+.preview {
+  background-color: aquamarine;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 400px;
+  margin-left: 30px;
+  padding: 15px;
   width: 300px;
 }

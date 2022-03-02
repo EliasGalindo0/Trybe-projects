@@ -18,7 +18,7 @@ class Form extends React.Component {
       onSaveButtonClick } = this.props;
 
     return (
-      <form>
+      <form className="form">
         <h2>Adicionar nova Carta</h2>
         <label htmlFor="name-input">
           Nome
@@ -92,12 +92,11 @@ class Form extends React.Component {
             value={ cardRare }
             onChange={ onInputChange }
           >
-            <option value="normal">Normal</option>
-            <option value="raro">Raro</option>
-            <option value="muito raro">Muito Raro</option>
+            <option value="Normal">Normal</option>
+            <option value="Raro">Raro</option>
+            <option value="Muito Raro">Muito Raro</option>
           </select>
         </label>
-        <br />
         <label htmlFor="trunfo" value={ cardTrunfo }>
           Trunfo
           { hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p> : <input
@@ -109,8 +108,6 @@ class Form extends React.Component {
             checked={ cardTrunfo }
           />}
         </label>
-        <br />
-
         <button
           type="submit"
           data-testid="save-button"

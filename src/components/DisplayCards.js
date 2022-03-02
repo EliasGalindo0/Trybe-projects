@@ -7,7 +7,7 @@ class DisplayCards extends React.Component {
       cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
       cardImage, cardRare, cardTrunfo, deleteCard } = this.props;
     return (
-      <div>
+      <div className="card">
         <p data-testid="name-card">
           { cardName }
         </p>
@@ -20,15 +20,15 @@ class DisplayCards extends React.Component {
           { cardDescription }
         </p>
         <p data-testid="attr1-card">
-          Attr01....................................
+          Attr01......................................
           { cardAttr1 }
         </p>
         <p data-testid="attr2-card">
-          Attr02....................................
+          Attr02......................................
           { cardAttr2 }
         </p>
         <p data-testid="attr3-card">
-          Attr03....................................
+          Attr03......................................
           { cardAttr3 }
         </p>
         <p data-testid="rare-card">

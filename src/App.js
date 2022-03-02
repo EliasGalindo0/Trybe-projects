@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Card from './components/Card';
 import DisplayCards from './components/DisplayCards';
 import './App.css';
+import FilterCards from './components/FilterCards';
 
 const defaultState = {
   cardName: '',
@@ -115,6 +116,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Tryunfo</h1>
+        <FilterCards />
         <Form
           { ...this.state }
           onInputChange={ this.onInputChange }
