@@ -16,6 +16,7 @@ const defaultState = {
   isSaveButtonDisabled: true,
   hasTrunfo: false,
   cardSaved: [],
+  filter: '',
 };
 
 class App extends React.Component {
@@ -25,6 +26,13 @@ class App extends React.Component {
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+  }
+
+  handleInput(event) {
+    this.setState({
+      filter: event.target.value,
+    });
   }
 
   onInputChange(event) {
@@ -102,7 +110,7 @@ class App extends React.Component {
     }));
   }
 
-  deleteCard(cards) {
+  deleteCard = (cards) => {
     this.setState((prevState) => ({
       cardSaved: prevState.cardSaved.filter((card) => card.cardName !== cards),
       hasTrunfo: false,
@@ -111,6 +119,7 @@ class App extends React.Component {
 
   render() {
     const showCards = this.state;
+    const { filter } = this.state;
 
     return (
       <div>
@@ -123,21 +132,33 @@ class App extends React.Component {
         <Card
           { ...this.state }
         />
+        <label htmlFor="filter">
+          Filtros de busca
+          <input
+            data-testid="name-filter"
+            id="filter"
+            type="text"
+            onChange={ this.handleInput }
+          />
+        </label>
         <section>
-          { showCards.cardSaved.map((card) => (
-            <DisplayCards
-              key={ card.cardName }
-              cardName={ card.cardName }
-              cardDescription={ card.cardDescription }
-              cardAttr1={ card.cardAttr1 }
-              cardAttr2={ card.cardAttr2 }
-              cardAttr3={ card.cardAttr3 }
-              cardImage={ card.cardImage }
-              cardRare={ card.cardRare }
-              cardTrunfo={ card.cardTrunfo }
-              deleteCard={ this.deleteCard }
-            />
-          ))}
+          { showCards.cardSaved
+            .filter((card) => card.cardName
+              .includes(filter))
+            .map((card) => (
+              <DisplayCards
+                key={ card.cardName }
+                cardName={ card.cardName }
+                cardDescription={ card.cardDescription }
+                cardAttr1={ card.cardAttr1 }
+                cardAttr2={ card.cardAttr2 }
+                cardAttr3={ card.cardAttr3 }
+                cardImage={ card.cardImage }
+                cardRare={ card.cardRare }
+                cardTrunfo={ card.cardTrunfo }
+                deleteCard={ this.deleteCard }
+              />
+            ))}
         </section>
       </div>
     );

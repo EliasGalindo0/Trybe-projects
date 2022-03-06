@@ -35,13 +35,15 @@ class DisplayCards extends React.Component {
           { cardRare }
         </p>
         { cardTrunfo ? <p data-testid="trunfo-card">Super Trunfo</p> : '' }
-        <button
-          data-testid="delete-button"
-          type="button"
-          onClick={ () => deleteCard(cardName) }
-        >
-          Excluir
-        </button>
+        <div>
+          <button
+            data-testid="delete-button"
+            type="button"
+            onClick={ () => deleteCard(cardName) }
+          >
+            Excluir
+          </button>
+        </div>
       </div>
     );
   }
