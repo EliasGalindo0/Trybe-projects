@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 import DisplayCards from './components/DisplayCards';
+import HandleFilter from './components/HandleFilter';
 import './App.css';
 
 const defaultState = {
@@ -16,23 +17,15 @@ const defaultState = {
   isSaveButtonDisabled: true,
   hasTrunfo: false,
   cardSaved: [],
-  filter: '',
 };
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = defaultState;
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-  }
-
-  handleInput(event) {
-    this.setState({
-      filter: event.target.value,
-    });
   }
 
   onInputChange(event) {
@@ -119,8 +112,7 @@ class App extends React.Component {
 
   render() {
     const showCards = this.state;
-    const { filter } = this.state;
-
+    // const { cards, filters } = this.props;
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -132,19 +124,10 @@ class App extends React.Component {
         <Card
           { ...this.state }
         />
-        <label htmlFor="filter">
-          Filtros de busca
-          <input
-            data-testid="name-filter"
-            id="filter"
-            type="text"
-            onChange={ this.handleInput }
-          />
-        </label>
-        <section>
+        <HandleFilter />
+        <ul>
           { showCards.cardSaved
-            .filter((card) => card.cardName
-              .includes(filter))
+            .filter((card) => card.cardName)
             .map((card) => (
               <DisplayCards
                 key={ card.cardName }
@@ -159,7 +142,7 @@ class App extends React.Component {
                 deleteCard={ this.deleteCard }
               />
             ))}
-        </section>
+        </ul>
       </div>
     );
   }
