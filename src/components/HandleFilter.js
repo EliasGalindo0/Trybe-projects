@@ -1,27 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class HandleFilter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filter: '',
-      rarity: 'todas',
-      sTrunfo: '',
-    };
-    this.handleInput = this.handleInput.bind(this);
-  }
-
-  handleInput(event) {
-    const { name, type } = event.target;
-    const value = type !== 'checkbox' ? event.target.value : event.target.checked;
-    this.setState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  }
-
   render() {
-    const { filter, rarity, sTrunfo } = this.state;
+    const { filter, onInputChange } = this.props;
     return (
       <div>
         <label htmlFor="filter">
@@ -31,15 +13,15 @@ class HandleFilter extends React.Component {
             id="filter"
             name="filter"
             type="text"
-            value={ filter }
-            onChange={ this.handleInput }
+            cardName={ filter }
+            onChange={ onInputChange }
           />
           <select
             data-testid="rare-filter"
             id="rare"
             name="rarity"
-            value={ rarity }
-            onChange={ this.handleInput }
+            cardRare={ filter }
+            onChange={ onInputChange }
           >
             <option value="todas">Todas</option>
             <option value="normal">Normal</option>
@@ -53,8 +35,8 @@ class HandleFilter extends React.Component {
               name="sTrunfo"
               id="super-trunfo"
               type="checkbox"
-              checked={ sTrunfo }
-              onChange={ this.handleInput }
+              cardTrunfo={ filter }
+              onChange={ onInputChange }
             />
           </label>
         </label>
@@ -62,5 +44,12 @@ class HandleFilter extends React.Component {
     );
   }
 }
+
+HandleFilter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  // cardRare: PropTypes.string.isRequired,
+  // cardTrunfo: PropTypes.string.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+};
 
 export default HandleFilter;

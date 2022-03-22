@@ -2,8 +2,8 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 import DisplayCards from './components/DisplayCards';
-import HandleFilter from './components/HandleFilter';
 import './App.css';
+import HandleFilter from './components/HandleFilter';
 
 const defaultState = {
   cardName: '',
@@ -17,6 +17,9 @@ const defaultState = {
   isSaveButtonDisabled: true,
   hasTrunfo: false,
   cardSaved: [],
+  filter: '',
+  rarity: 'todas',
+  sTrunfo: '',
 };
 
 class App extends React.Component {
@@ -111,8 +114,7 @@ class App extends React.Component {
   }
 
   render() {
-    const showCards = this.state;
-    // const { cards, filters } = this.props;
+    const { cardSaved, filter } = this.state;
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -124,25 +126,28 @@ class App extends React.Component {
         <Card
           { ...this.state }
         />
-        <HandleFilter />
-        <ul>
-          { showCards.cardSaved
-            .filter((card) => card.cardName)
-            .map((card) => (
-              <DisplayCards
-                key={ card.cardName }
-                cardName={ card.cardName }
-                cardDescription={ card.cardDescription }
-                cardAttr1={ card.cardAttr1 }
-                cardAttr2={ card.cardAttr2 }
-                cardAttr3={ card.cardAttr3 }
-                cardImage={ card.cardImage }
-                cardRare={ card.cardRare }
-                cardTrunfo={ card.cardTrunfo }
-                deleteCard={ this.deleteCard }
-              />
-            ))}
-        </ul>
+        <HandleFilter
+          cardName={ filter }
+          cardRare={ filter }
+          cardTrunfo={ filter }
+          onChange={ this.onInputChange }
+        />
+        { cardSaved
+          .filter((card) => card.cardName.includes(filter))
+          .map((card) => (
+            <DisplayCards
+              key={ card.cardName }
+              cardName={ card.cardName }
+              cardDescription={ card.cardDescription }
+              cardAttr1={ card.cardAttr1 }
+              cardAttr2={ card.cardAttr2 }
+              cardAttr3={ card.cardAttr3 }
+              cardImage={ card.cardImage }
+              cardRare={ card.cardRare }
+              cardTrunfo={ card.cardTrunfo }
+              deleteCard={ this.deleteCard }
+            />
+          ))}
       </div>
     );
   }
