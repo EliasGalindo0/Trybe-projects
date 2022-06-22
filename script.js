@@ -7,16 +7,16 @@ const scoreDisplay = document.querySelector('#score');
 function randomColorsGenerate() {
   const aux = '0123456789ABCDEF';
   let color = '#';
-  for (let i = 0; i < 6; i += 1) {
+  for (let index = 0; index < 6; index += 1) {
     color += aux[Math.floor(Math.random() * 16)];
   }
   return `${color}FF`;
 }
 
 function setColors() {
-  for (let i = 0; i < randomColors.length; i += 1) {
+  for (let index = 0; index < randomColors.length; index += 1) {
     const color = randomColorsGenerate();
-    randomColors[i].style.backgroundColor = color;
+    randomColors[index].style.backgroundColor = color;
   }
   const rgbText = document.getElementById('rgb-color');
   const rgbColor = document.querySelector('.ball');
@@ -47,9 +47,9 @@ function pontuation() {
   scoreDisplay.innerText = `${localStorage.getItem('score')}`;
 }
 
-function changeClassChoosen(e) {
-  e.target.classList.contains('ball');
-  e.target.classList.add('choosen');
+function changeClassChoosen(event) {
+  event.target.classList.contains('ball');
+  event.target.classList.add('choosen');
   const choose = document.querySelector('.choosen');
   const bkgChoose = getComputedStyle(choose).backgroundColor;
   const rgbCompare = document.getElementById('rgb-color').innerText;
