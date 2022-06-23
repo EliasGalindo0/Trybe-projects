@@ -1,1 +1,0 @@
-Project Color Guess - Elias Galindo
