@@ -63,6 +63,7 @@ function changeClassChoosen(event) {
 
 function reset() {
   window.location.reload();
+  localStorage.setItem('score', 0);
 }
 
 colorList.addEventListener('click', changeClassChoosen);
